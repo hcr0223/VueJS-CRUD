@@ -7,6 +7,50 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Setup
+You can install laravel packages next command
+```bash
+composer install
+```
+
+Then install NPM and Vue modules with next command
+```bash
+npm install
+```
+
+Next, we need to create .env file for global configuration base on the file .env.example and change this global variables
+```env
+// .env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=thiio
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+After we need to migrate the tables for the database for MySQL
+```bash
+php artisan migrate
+```
+
+Next, we need to create app key and JWT token with the next commands
+```bash
+php artisan key:generate
+php artisan jwt:secret
+```
+
+And finally we can run the application from laravel and vue front-end application by opening 2 terminal windows, One with.
+```bash
+php artisan serve
+```
+and the second window with:
+```bash
+npm run dev
+```
+
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
